@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Product</title>
+</head>
+<body>
+<form action="#" th:action="@{/product-create}" th:object="${product}" method="post">
+    <label for="product_name">Name</label>
+    <input type="text" th:field="*{product_name}" id="product_name" placeholder="Name">
+    <label for="product_price">Price</label>
+    <input type="text" th:field="*{product_price}" id="product_price" placeholder="Price">
+    <input type="submit" value="Create Product">
+</form>
+</body>
+</html>
