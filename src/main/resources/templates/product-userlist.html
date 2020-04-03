@@ -22,13 +22,10 @@
                 <td th:text="${product.id}"></td>
                 <td th:text="${product.product_name}"></td>
                 <td th:text="${product.product_price}"></td>
-                <td><a th:href="@{product-update/{id}(id=${product.id})}">Изменить</a></td>
-                <td><a th:href="@{product-delete/{id}(id=${product.id})}">Удалить</a></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <p><a href="/product-create">Добавить товар</a></p>
 </div>
 </body>
 </html>
