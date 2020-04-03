@@ -43,13 +43,13 @@ public class ProductController {
     @PostMapping("/product-create")
     public String createProduct(Product product){
         productService.saveProduct(product);
-        return "redirect:/products";
+        return "redirect:/products-admin";
     }
 
     @GetMapping("/product-delete/{id}")
     public String deleteProduct(@PathVariable("id") Long id){
         productService.deleteById(id);
-        return "redirect:/products";
+        return "redirect:/products-admin";
     }
 
     @GetMapping("/product-update/{id}")
@@ -62,6 +62,6 @@ public class ProductController {
     @PostMapping("/product-update")
     public String updateProduct(Product product){
         productService.saveProduct(product);
-        return "redirect:/products";
+        return "redirect:/products-admin";
     }
 }

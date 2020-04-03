@@ -2,14 +2,26 @@
 <html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Товары</title>
+    <title>ПК-Магазин</title>
+    <style>
+   table {
+    width: 70%; /* Ширина таблицы */
+    background: white; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */
+    border-spacing: 1px; /* Расстояние между ячейками */
+   }
+   td, th {
+    background: #85C1E9; /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг текста */
+   }
+  </style>
 </head>
 <body>
 <div th:switch="${products}">
     <h2 th:case="null">Товары не найдены!</h2>
     <div th:case="*">
-        <h2>Товары</h2>
-        <table>
+       <h2 style = "font-family:Courier New;" align="center">Список доступных товаров</h2>
+        <table align="center">
             <thead>
             <tr>
                 <th>Id</th>
@@ -26,6 +38,9 @@
             </tbody>
         </table>
     </div>
+    <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+        <p><button name="buttonLogout">Выход</button></p>
+    </form>
 </div>
 </body>
 </html>
