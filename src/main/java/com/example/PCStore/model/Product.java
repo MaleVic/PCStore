@@ -13,6 +13,4 @@ public class Product {
     private Long id;
     private String product_name;
     private Long product_price;
-
-
 }
