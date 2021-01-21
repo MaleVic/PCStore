@@ -19,6 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
+
     }
 
     @Override
@@ -26,8 +27,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/products-admin").hasRole("ADMIN")
                 .antMatchers("/products").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/").permitAll()
+                .antMatchers("/home_page").permitAll()
                 .and().formLogin()
+                .defaultSuccessUrl("/home_page",true)
+                .failureUrl("/login.html?error=true")
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
 
